@@ -3,7 +3,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:getx_features/Home_Page.dart';
-import 'package:getx_features/Reative_Satte_Obx.dart';
+import 'package:getx_features/Incr_Num_Getx.dart';
+import 'package:getx_features/Reactive_Satte_Obx.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Whatsapp Dude',
             builder: EasyLoading.init(),
-            home: ReactiveStateObx(),
+            home: IncrementNumGetx(),
           );
         });
   }

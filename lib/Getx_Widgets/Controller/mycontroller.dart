@@ -13,5 +13,10 @@ class MyController extends GetxController {
       val?.name = val.name.toString().toUpperCase();
     });
   }
-  //////////////////////////////
+
+  //// increment number Getx //////////
+  var count = 0.obs;
+  void increment() {
+    count++;
+  }
 }
