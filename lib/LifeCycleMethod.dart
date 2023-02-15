@@ -3,11 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:getx_features/Getx_Widgets/Controller/mycontroller.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class SimpleStateManage extends StatelessWidget {
-  const SimpleStateManage({super.key});
+import 'Getx_Widgets/Controller/mycontroller.dart';
+
+class LifeCycleMethod extends StatelessWidget {
+  LifeCycleMethod({super.key});
+
+  MyController _controller = Get.put(MyController());
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +23,19 @@ class SimpleStateManage extends StatelessWidget {
           child: Column(
             children: [
               20.h.heightBox,
-              GetBuilder(
-                  init: MyController(),
+              GetBuilder<MyController>(
+                  initState: (data) => _controller.increments(),
+                  dispose: (_) => _controller.cleantask(),
                   builder: (controller) {
                     return Text(
-                      "The value is ${controller.add}",
-                      style: TextStyle(fontSize: 25.sp, color: Colors.red),
+                      "The value is ${_controller.counts}",
+                      style: TextStyle(fontSize: 25.sp, color: Colors.blue),
                     );
                   }),
-              15.h.heightBox,
+              25.h.heightBox,
               OutlinedButton(
-                  onPressed: () {
-                    Get.find<MyController>().addCount();
-                  },
-                  child: Text("Increment Number SMP"))
+                  onPressed: () {},
+                  child: Text("After increments of 5 seconds"))
             ],
           ),
         ),

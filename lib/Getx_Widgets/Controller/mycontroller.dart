@@ -19,4 +19,35 @@ class MyController extends GetxController {
   void increment() {
     count++;
   }
+
+///////// Simple state Management
+  var add = 0;
+  void addCount() {
+    add++;
+    update();
+  }
+
+  ////////////  Life Cycle Method /////////////////
+  var counts = 0;
+  void increments() async {
+    await Future<int>.delayed(Duration(seconds: 5));
+    this.counts;
+    update();
+  }
+
+  void cleantask() {
+    print("Clean Task");
+  }
+
+  @override
+  void onInit() {
+    print("Init Called");
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    print("Init Closed");
+    super.onClose();
+  }
 }

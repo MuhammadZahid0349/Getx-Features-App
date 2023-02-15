@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:getx_features/Home_Page.dart';
 import 'package:getx_features/Incr_Num_Getx.dart';
+import 'package:getx_features/LifeCycleMethod.dart';
 import 'package:getx_features/Reactive_Satte_Obx.dart';
+import 'package:getx_features/SimpleManagState.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Whatsapp Dude',
             builder: EasyLoading.init(),
-            home: IncrementNumGetx(),
+            home: LifeCycleMethod(),
           );
         });
   }
