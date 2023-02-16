@@ -30,8 +30,8 @@ class MyController extends GetxController {
   ////////////  Life Cycle Method /////////////////
   var counts = 0;
   void increments() async {
-    await Future<int>.delayed(Duration(seconds: 5));
-    this.counts;
+    await Future.delayed(Duration(seconds: 5));
+    this.counts++;
     update();
   }
 
